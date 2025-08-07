@@ -8,5 +8,10 @@ import pandas as pd
 
 tabela = pd.read_csv('C:\\Users\\felip\\Desktop\\repositorio\\AnalisandoDadosPython\\Dados\\ClientesBanco.csv', encoding='latin1')
 tabela = tabela.drop('CLIENTNUM', axis=1)
-print(tabela)
 
+# Exclui todas as linhas que possuem algum valor vazio
+tabela = tabela.dropna()
+print(tabela.info())
+print(tabela.describe().round(2))
+
+# https://pages.hashtagtreinamentos.com/minicurso-python-analisededados-obrigado?blog=1n4033rer&video=1fnw9tal6
